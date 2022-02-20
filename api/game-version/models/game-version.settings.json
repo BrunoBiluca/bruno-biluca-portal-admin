@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "game_versions",
+  "info": {
+    "name": "GameVersion",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "version": {
+      "type": "string",
+      "required": true
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "prototype",
+        "pre_alpha",
+        "alpha",
+        "beta",
+        "gold"
+      ]
+    },
+    "notes": {
+      "type": "richtext"
+    },
+    "game": {
+      "via": "game_versions",
+      "model": "games"
+    }
+  }
+}

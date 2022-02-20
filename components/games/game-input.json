@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_games_game_inputs",
+  "info": {
+    "name": "game_input",
+    "icon": "keyboard",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "input": {
+      "type": "string"
+    },
+    "action": {
+      "type": "string"
+    }
+  }
+}

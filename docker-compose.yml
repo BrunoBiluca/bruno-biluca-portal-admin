@@ -1,0 +1,23 @@
+version: '3'
+services:
+  strapi:
+    image: strapi/strapi
+    env_file:
+      - local.env
+    volumes:
+      - ./:/srv/app
+    ports:
+      - '1337:1337'
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_DB: strapi
+      POSTGRES_USER: strapi
+      POSTGRES_PASSWORD: strapi
+    ports:
+      - 5432:5432
+    volumes:
+      - /postgres/strapi_data:/var/lib/postgresql/data
